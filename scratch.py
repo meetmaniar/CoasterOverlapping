@@ -1,4 +1,6 @@
 from decimal import *
+from __builtin__ import input
+import math
 
 #Sets decimal to 25 digits of precision
 getcontext().prec = 50
@@ -18,9 +20,45 @@ def plouffBig(n):
     return pi
 
 
-print ("\t\t\t Plouff ")
+
 for j in range(1,20):
     #print( j, " ", plouffBig(j))
-    number=plouffBig(19)
+    pi=plouffBig(19)
     
-print(number) 
+print("Pi: ", pi)
+
+a=input('Enter the value of Angle:-')
+theta=a*pi/180
+
+result1=math.sin(theta)
+result2=math.cos(theta)
+print(result1,result2)   # Just to compare the result with the scratch functions
+
+
+
+def scratch_sine(theta):
+    x=theta
+    m=0
+
+    for k in range(0,10,1):
+        y=((-1)**k)*(x**(1+2*k))/factorial(1+2*k)   #Taylor Expansion of Sine
+        m+=y
+
+    return m
+
+print("Sine of your angle is: ")
+print(scratch_sine(theta))
+
+
+
+def scratch_cosine(theta):
+    x=theta
+    m=0
+    
+    for k in range(0,10,1):
+        y=((-1)**k)*(x**(2*k))/factorial(2*k)    #Taylor Expansion of Cosine
+        m+=y
+    return m
+
+print("Cosine of your angle is: ")
+print((scratch_cosine(theta)))
