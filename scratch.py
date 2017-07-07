@@ -25,7 +25,8 @@ for j in range(1,20):
     #print( j, " ", plouffBig(j))
     pi=plouffBig(19)
     
-print("Pi: ", pi)
+print("Pi: ")
+print(pi)
 
 a=input('Enter the value of Angle:-')
 theta=a*pi/180
