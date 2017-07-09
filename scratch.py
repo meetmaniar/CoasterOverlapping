@@ -1,8 +1,9 @@
-from decimal import *
-from __builtin__ import input
+from decimal import Decimal,getcontext
+from builtins import input
+
 import math
 
-#Sets decimal to 25 digits of precision
+#Sets decimal to 50 digits of precision
 getcontext().prec = 50
 
 def factorial(n):
@@ -29,6 +30,7 @@ print("Pi: ")
 print(pi)
 
 a=input('Enter the value of Angle:-')
+a = Decimal(a)
 theta=a*pi/180
 
 result1=math.sin(theta)
