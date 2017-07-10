@@ -12,7 +12,7 @@ def factorial(n):
     else:
         return n * factorial(n-1)
 
-def plouffBig(n): 
+def scratch_pi(n):   #plouffbig
     pi = Decimal(0)
     i = 0
     while i < n:
@@ -23,8 +23,8 @@ def plouffBig(n):
 
 
 for j in range(1,20):
-    #print( j, " ", plouffBig(j))
-    pi=plouffBig(19)
+    #print( j, " ", scratch_pi(j))
+    pi=scratch_pi(19)
     
 print("Pi: ")
 print(pi)
