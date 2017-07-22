@@ -1,4 +1,4 @@
-from decimal import Decimal,getcontext
+from decimal import *
 from builtins import input
 
 import math
@@ -29,13 +29,13 @@ for j in range(1,20):
 print("Pi: ")
 print(pi)
 
-a=input('Enter the value of Angle:-')
+a=input('Enter the value of Angle: ')
 a = Decimal(a)
 theta=a*pi/180
 
 result1=math.sin(theta)
 result2=math.cos(theta)
-print(result1,result2)   # Just to compare the result with the scratch functions
+print(result1,round(result2))   # Just to compare the result with the scratch functions
 
 
 
@@ -47,7 +47,7 @@ def scratch_sine(theta):
         y=((-1)**k)*(x**(1+2*k))/factorial(1+2*k)   #Taylor Expansion of Sine
         m+=y
 
-    return m
+    return Decimal(m)
 
 print("Sine of your angle is: ")
 print(scratch_sine(theta))
@@ -64,4 +64,28 @@ def scratch_cosine(theta):
     return m
 
 print("Cosine of your angle is: ")
-print((scratch_cosine(theta)))
+print(((scratch_cosine(theta))))
+def samesign(a, b):
+        return a * b > 0
+
+def bisection(function, low, high):
+    
+
+    assert not samesign(function(low), function(high))
+
+    for i in range(54):
+        midpoint = (low + high) / 2.0
+        if samesign(function(low), function(midpoint)):
+            low = midpoint
+        else:
+            high = midpoint
+
+    return midpoint
+
+def f(x):
+        x = Decimal(x)
+        return x-scratch_sine(x)-(pi/2)
+
+x = bisection(f, 1, 3)
+print("Alpha: ")
+print (x)
