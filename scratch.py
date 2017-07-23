@@ -1,5 +1,10 @@
+'''
+Created on Jul 10, 2017
+
+@author: M_ANIAR
+'''
 from decimal import *
-from builtins import input
+from future_builtins import *
 import math
 
 
@@ -20,6 +25,7 @@ def scratch_pi(n):   #plouffbig
         pi += (Decimal(1)/(16**i))*((Decimal(4)/(8*i+1))-(Decimal(2)/(8*i+4))-(Decimal(1)/(8*i+5))-(Decimal(1)/(8*i+6)))
         i += 1
     return pi
+
 
 
 
@@ -53,23 +59,19 @@ def scratch_cosine(theta):
         m+=y
     return Decimal(m)
 
-
-def samesign(a, b):
+def checkSign(a, b):
         return a * b > 0
 
-def bisection(function, low, high):
+def bisection(function, negative, positive):
     
 
-    assert not samesign(function(low), function(high))
+    assert not checkSign(function(negative), function(positive))
 
-    for i in range(54):
-        midpoint = (low + high) / 2.0
-        if samesign(function(low), function(midpoint)):
-            low = midpoint
+    for i in range(100):
+        midpoint = (negative + positive) / 2.0
+        if checkSign(function(negative), function(midpoint)):
+            negative = midpoint
         else:
-            high = midpoint
+            positive = midpoint
 
     return midpoint
-
-
-
