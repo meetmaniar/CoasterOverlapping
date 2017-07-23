@@ -1,7 +1,8 @@
 from decimal import *
 from builtins import input
-
 import math
+
+
 
 #Sets decimal to 50 digits of precision
 getcontext().prec = 50
@@ -26,16 +27,7 @@ for j in range(1,20):
     #print( j, " ", scratch_pi(j))
     pi=scratch_pi(19)
     
-print("Pi: ")
-print(pi)
 
-a=input('Enter the value of Angle: ')
-a = Decimal(a)
-theta=a*pi/180
-
-result1=math.sin(theta)
-result2=math.cos(theta)
-print(result1,round(result2))   # Just to compare the result with the scratch functions
 
 
 
@@ -49,8 +41,6 @@ def scratch_sine(theta):
 
     return Decimal(m)
 
-print("Sine of your angle is: ")
-print(scratch_sine(theta))
 
 
 
@@ -61,10 +51,9 @@ def scratch_cosine(theta):
     for k in range(0,10,1):
         y=((-1)**k)*(x**(2*k))/factorial(2*k)    #Taylor Expansion of Cosine
         m+=y
-    return m
+    return Decimal(m)
 
-print("Cosine of your angle is: ")
-print(((scratch_cosine(theta))))
+
 def samesign(a, b):
         return a * b > 0
 
@@ -82,10 +71,5 @@ def bisection(function, low, high):
 
     return midpoint
 
-def f(x):
-        x = Decimal(x)
-        return x-scratch_sine(x)-(pi/2)
 
-x = bisection(f, 1, 3)
-print("Alpha: ")
-print (x)
+
