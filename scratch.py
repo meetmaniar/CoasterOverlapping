@@ -4,7 +4,7 @@ Created on Jul 10, 2017
 @author: M_ANIAR
 '''
 from decimal import *
-from future_builtins import *
+from builtins import *
 import math
 
 
@@ -58,6 +58,7 @@ def scratch_cosine(theta):
         y=((-1)**k)*(x**(2*k))/factorial(2*k)    #Taylor Expansion of Cosine
         m+=y
     return Decimal(m)
+
 
 def checkSign(a, b):
         return a * b > 0
