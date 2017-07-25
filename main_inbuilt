@@ -1,0 +1,24 @@
+'''
+Created on Jul 25, 2017
+
+@author: M_ANIAR
+
+'''
+from math import *
+from inbuilt import *
+from decimal import *
+from builtins import *
+
+
+
+getcontext().prec = 50
+
+def f(a):
+    a=Decimal(a)
+    return (a-Decimal(math.sin(a))-Decimal((math.pi/2)))
+a=bisection(f, 0, 10)
+print(a)
+r=input("Enter Radius:")
+r=Decimal(r)
+l=Decimal(2*r*(1-(math.cos(a/2))))
+print(l)
