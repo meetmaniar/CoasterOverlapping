@@ -1,3 +1,6 @@
+
+
+
 '''
 Created on Jul 22, 2017
 
@@ -13,7 +16,9 @@ def f(a):
 
 a=bisection(f,0,10)
 print(a)
-r=input("Enter Radius:")
-r=Decimal(r)
-l=2*r*(1-(scratch_cosine(a/2)))
-print(l)
+try:
+    r=Decimal(input("Enter Radius: "))
+    l=2*r*(1-(scratch_cosine(a/2)))
+    print(l)
+except ValueError:
+    print("Invalid Input")
