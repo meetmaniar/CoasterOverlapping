@@ -1,9 +1,3 @@
-
-
-
-
-
-
 '''
 Created on Jul 10, 2017
 
@@ -19,23 +13,19 @@ def f(a):
     
 
 
-a=bisection(f,0,10)
-print(a)
-try:
-    r=Decimal(input("Enter Radius: "))
-    if(r<0): 
-        raise ValueError
-    l=2*r*(1-(scratch_cosine(a/2)))
-    print(l)
-    root=Element('Output')
-    tree=ElementTree(root)
-    alphaValue=Element('Alpha')
-    root.append(alphaValue)
-    lengthValue=Element('Length')
-    root.append(lengthValue)
-    alphaValue.text='Value of Alpha is: ' + str(a) + 'Radians'
-    lengthValue.text='Value of length is : ' + str(l)
-    tree.write(open('pojectoutput.xml', 'wb'))
-except ValueError:
-    print("Invalid Input")
+alpha=bisection(f,0,10)
+print(alpha)
+radius=UserInput()
 
+length=2*radius*(1-(scratch_cosine(alpha/2)))
+print(length)
+root=Element('Output')
+tree=ElementTree(root)
+alphaValue=Element('Alpha')
+root.append(alphaValue)
+lengthValue=Element('Length')
+root.append(lengthValue)
+alphaValue.text='Value of Alpha is: ' + str(alpha) + 'Radians'
+lengthValue.text='Value of length is : ' + str(length)
+tree.write(open('output.xml', 'wb'))
+file_open=open("output.txt","a")
