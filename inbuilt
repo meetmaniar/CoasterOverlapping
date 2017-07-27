@@ -1,4 +1,4 @@
-'''
+''
 Created on Jul 22, 2017
 
 @author: Meet-69
@@ -23,3 +23,13 @@ def bisection(function, negative, positive):
             positive = midpoint
 
     return midpoint
+def UserInput():
+    try:
+        r=float(input("Enter Radius: "))
+        
+        return float(r)
+    except ValueError:
+        print("Invalid Input")
+        UserInput()
+    except RecursionError:
+        print("Please enter positive number")
