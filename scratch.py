@@ -1,8 +1,3 @@
-'''
-Created on Jul 10, 2017
-
-@author: M_ANIAR
-'''
 from decimal import *
 from builtins import *
 
