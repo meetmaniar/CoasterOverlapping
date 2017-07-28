@@ -1,7 +1,7 @@
 '''
 Created on Jul 10, 2017
 
-@author: M_ANIAR
+@author: Vujariya
 '''
 from decimal import *
 from builtins import *
@@ -70,7 +70,7 @@ def bisection(function, negative, positive):
 
     for i in range(100):
         midpoint = (negative + positive) / 2.0
-        if checkSign(function(negative), function(midpoint)):
+        if checkSign(function(negative), function(midpoint)):   # check the sign of the values
             negative = midpoint
         else:
             positive = midpoint
