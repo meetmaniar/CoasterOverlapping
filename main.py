@@ -1,9 +1,3 @@
-'''
-Created on Jul 10, 2017
-
-@author: M_ANIAR
-
-'''
 from scratch import *
 
 from xml.etree.ElementTree import *
