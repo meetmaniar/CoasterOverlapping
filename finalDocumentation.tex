@@ -2,27 +2,420 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 
-
 \begin{document}
+
+\begin{titlepage}
+	\centering
+	\vspace*{0.5 cm}
+	\includegraphics[scale = 0.75]{Concordia.PNG}\\[1.0 cm]	% concordia Logo
+	\textsc{\LARGE SOEN 6441}\\[1.0 cm]	% Course code
+	\textsc{\LARGE Advance Programming Practices}\\[1.0 cm] %Corse name
+	\textsc{\LARGE Deliverable 1}\\[1.0 cm]
+	\textsc{\Large “Cheers”}\\[0.5 cm]	%project name
+	\textsc{\Large 28/07/2017}\\[0.5 cm]		
+	\textsc{\LARGE }\\[1.0 cm]
+	\textsc{\LARGE }\\[1.0 cm]
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft} \large
+			\emph{Submitted To:}\\
+			\textbf{Pankaj Kamthan}\\
+			%Asst. Professor\\
+		ComputerScience Department\\
+		\end{flushleft}
+	\end{minipage}~
+	\begin{minipage}{0.4\textwidth}
+		
+		\begin{flushright} \large
+			
+			\emph{Submitted By :} \\
+			Vivek Jariya(40043104)\\
+			Meet Maniar(40039203) \\
+			
+		\end{flushright}
+		
+	\end{minipage}\\[1 cm]
+		
+\end{titlepage}
+
 \tableofcontents
 	
 \title{Cheers}
 
 \newpage
 \section{Introduction}
-	Let’s consider two identical circular coasters, with negligible heights. We place them partially overlapping one another. We are interested in finding, how much the upper coaster has to be moved over the lower coaster, so that the area of the overlapping region is half of any one coaster.
+
+		Coaster is an item on which, one can place the glass of a beverage or other drink. Coasters protect the surface of a table or any other surface where the one might place a beverage. They are used not just to protect the surface of the table, but, as they are usually made of paper, they can also be used to absorb condensation dripping along the glass or serve as an ad-hoc notepad[1].
 		
-\section{Problem Statement}
-	Coaster is an item on which, one can place the glass of a beverage or other drink. Coasters protect the surface of a table or any other surface where the one might place a beverage. They are used not just to protect the surface of the table, but, as they are usually made of paper, they can also be used to absorb condensation dripping along the glass or serve as an ad-hoc notepad. [1] The tegestologists are also fascinated in collecting the coasters. 
+\section{Problem Definition}
+		
+		Let’s consider two identical circular coasters, with negligible heights. We place them partially overlapping one another. We are interested in finding, how much the upper coaster has to be moved over the lower coaster, so that the area of the overlapping region is half of any one coaster. 
 	
 \section{Soution}
-	Let’s consider two identical circular coasters, with negligible heights. We place them partially overlapping one another. We are interested in finding, how much the upper coaster has to be moved over the lower coaster, so that the area of the overlapping region is half of any one coaster as shown in the figure 1.
-	Then the length $l$ of the segment $X_1X_2$ is given by the equation,\\
 	
-	 $$l = 2R(1 – \cos(\alpha/2))$$,\\
+		Let’s consider two identical circular coasters, with negligible heights. We place them partially overlapping one another. We are interested in finding, how much the upper coaster has to be moved over the lower coaster, so that the area of the overlapping region is half of any one coaster[10].\\
+		
+		Then the length $l$ of the segment $X_1X_2$ is given by the equation,\\
 	
-	and $\alpha$ is given by the equation\\
+	 	$$l = 2R(1 – \cos(\alpha/2))$$\\ %formula for L
 	
-	 $$\alpha – \sin(\alpha) = \pi/2$$.
+		and $\alpha$ is given by the equation\\
 	
+	 	$$\alpha – \sin(\alpha) = \pi/2$$ %formula for alpha
+
+\newpage
+\section{CRC model}
+
+		A Class Responsibility Collaborator (CRC) model (Beck and Cunningham 1989; Wilkinson 1995; Ambler 1995) is a collection of standard index cards that have been divided into three sections[2], as 
+		
+		\begin{itemize}
+			\item A class represents a collection of similar objects
+			\item a responsibility is something that a class knows or does
+			\item a collaborator is another class that a class interacts with to fulfill its responsibilities
+		\end{itemize}
+	
+		Below are the CRC cards which relate to CHEERS. 
+	
+\newpage
+	\subsection{CHEERS CRC Model}
+		\begin{figure}[h!]
+			\includegraphics[width=\linewidth]{CRC.png} %image path and dimension
+			\caption{CRC model of CHEERS}
+		\end{figure}
+	\subsection{Reason for collaboration}
+		
+		The 'Main\_Scratch' and 'Scratch' are collaborated as the latter provides the values of $sine$, $cosine$, $\pi$ and $\alpha$ which are required for the calcultion of lenght of line segment $X_1X_2$ in 'Main'.\\
+		Similarly, Main\_inbulit and inbuilt are collaborated for the same reason.
+
+\newpage
+\section{Algorithms and Psuedo code}
+	
+	There are five primary functions which are made from scratch, which are used in CHEERS. They are as follows,
+	
+	\begin{itemize}
+		\item Algorithm for Sine
+		\item Algorithm for Cosine
+	 	\item Algorithm for Pi
+		\item Algorithm for Factorial
+		\item Algorithm for Bisection theorem
+	\end{itemize}
+
+	\subsection{Algorithm for Sine}
+		Below is the Sine function which is made from scratch.\\\\
+		Psuedo code for Sine function:-\\\\
+		Step 1: Begin\\\\
+		Step 2: set $x=\theta$\\\\ 
+		Step 3: set $m=0$\\\\
+		Step 4: initilize $k=0$\\\\
+		Step 5: increament $k=10$\\\\
+		Step 6: Execute the formula for every value of k $$y= \sum_{k=0}^{10}  \frac{(-1^k)(x^1+2k)}{(1+2k)!}$$\\ % taylor series for sine
+		Step 7: $m=m+y$\\\\
+		Step 8: return $m$\\\\
+		Step 9: End\\\\
+		
+	\subsection{Algorithm for Cosine}
+		Below is the Cosine function which is made from scratch.\\\\
+		Psuedo code for Cosine function:-\\\\
+		Step 1: Begin\\\\
+		Step 2: set $x=\theta$\\\\ 
+		Step 3: set $m=0$\\\\
+		Step 4: initilize $k=0$\\\\
+		Step 5: increament $k=10$\\\\
+		Step 6: Execute the formula for every value of k $$y= \sum_{k=0}^{10}  \frac{(-1^k)(x^2k)}{(2k)!}$$\\\\ % taylor series for Cosine
+		Step 7: $m=m+y$\\\\
+		Step 8: return $m$\\\\
+		Step 9: End\\\\
+		 
+	\subsection{Algorithm for Pi}
+		Below is the Pi function which is made from scratch.\\\\
+		Psuedo code for Pi function:-\\\\
+		Step 1: Begin\\\\
+		Step 2: set $\pi=0$\\\\ 
+		Step 3: set $i=0$\\\\
+		Step 4: while $i < n$\\\\
+		Step 5: Execute the formula for every value of i $$\pi = \pi + \sum_{i=1}^{n} \frac{1}{16i} \lbrack \frac{4}{8i+1} - \frac{2}{8i+4} - \frac{1}{8i+5} - \frac{1}{8i+6} \rbrack $$\\\\ 
+		Step 6: $i=i+1$\\\\
+		Step 7: return $\pi$\\\\
+		Step 8: End\\\\
+		
+	\subsection{Algorithm for Factorial}
+		Below is the Factorial function which is made from scratch.\\\\
+		Psuedo code for Factorial function:-\\\\
+		Step 1: Begin\\\\
+		Step 2: if $n<1$\\\\ 
+		Step 3: return 1\\\\
+		Step 4: else\\\\
+		Step 5: return $n*(n-1)!$\\\\ 
+		Step 6: End\\\\
+	
+	\subsection{Algorithm for Bisection Method}
+		Below is the Bisection function which is made from scratch.\\\\
+		Psuedo code for Bisection Method:-\\\\
+		Step 1: Begin\\\\
+		Step 2:	Let Positive Values be $P$\\\\
+		Step 3: Let Negative Values be $N$\\\\
+		Step 4: Check the sign of the two values\\\\
+		Step 2: if one is $P$ and another is $N$, calculate midpoint\\\\
+		Step 4: $Midpoint=\frac{P+N}{2}$\\\\
+		Step 5: Check the sign of $Midpoint$ and $N$ \\\\
+		Step 6: If the $Midpoint$ is positive, $N$ = $Midpoint$\\\\
+		Step 6: Else $P$ = $Midpoint$\\\\
+		Step 7: Return $Midpoint$\\\\
+		Step 8: End\\\\		
+		
+\newpage
+\section{Object Oriented Principles}
+
+		We must design the code in such a way that it provides an opportunity for further changes without involving high time and money. therefor in the design and development phases we follow Object-Oriented design principles. We should always strive for highly cohesive and loosely couple solution[11]. The main principles that are used are: 
+
+	\begin{itemize}
+		\item Single Responsibility Principle
+		\item Balanced Responsibility Principle
+		\item DRY (Don't repeat yourself)
+		\item Open Close Principle
+		\item Dependency Inversion Principle
+	\end{itemize} 
+
+		We have two primary requirements to satisfy incarnation-1(Scrtach) where
+		we have to compute the values from scratch and incarnation-2(inbuilt) where we can use python libraries to compute the values. Each of this incarnations requires different principles to be applied.\\
+	
+		In CHEERS we have assigned \textbf{single responsibility} to each function that has been used in the incarnation1 and incarnation-2. This would increase the cohesion and decrease the coupling in each class, which satisfies the SRP. There is requirement for designers and developers to provide output in two formats of \textbf{plain text and XML.}\\
+	
+		The second object oriented design principle implemented is	\textbf{DRY}, as name suggest DRY (don't repeat yourself) means instead of duplicating the code we have used abstraction to abstract common things in one place. In incarnation-1 we have used the factorial function and calling that functions using \textbf{recursion}	instead of writing the complete code, hence fulfilling DRY.\\
+	
+		Further, \textbf{OCP} and \textbf{DIP} are also followed in order to provide proper design for current requirement and future changes . In both incarnations we stick to SRP and BRP principles in designing classes, interfaces and allocation of methods. For exmple, main class is just responsible to calculate the final equation. So, in future, if ever there be a need to manipulate the equation, the developer just needs to update this class.
+		
+\section{Quality of Code}
+
+		There are serveral quality aspects by which the quality of the code can be improved. By followng this aspects, the code would look more professional.[8]
+		The below mentioned are the few quality aspects which are fulfilled in CHEERS.\\
+		
+		\begin{itemize}
+			
+			\item \textbf{Readablity}\\
+			The whole code has been properly indented so as to make the code readable by the user.
+			
+			\item \textbf{Understandablity}\\
+			The whole code has been provided with comments, which makes the code understandable. Further, the names of the function, images, files, etc. are kept self explainatory.
+			
+			\item \textbf{Complexity}\\
+			There are 2 files per incarnation, out this one acts as the library and the other as the main file. By dividing the code in such a way reduces the complexity.\\
+			Also the code has been kept in small blocks which further reduces the complexity.
+			
+			\item \textbf{Traceablity}\\
+			All the elements of CHEERS — code, documentation, tool sources, test data; has been kept under version control. GitHub was used to achieve this task.
+			
+			\item \textbf{Testablity}\\
+			After every small part of code, unit testing was performed in the debugger which helps identify errors and solve them at an early stage. Also it is easy for the developer to solve errors before integrating the whole code.
+			
+			\item \textbf{Reusability}\\
+			Reusability is the use of existing assets in some form within the software. In CHEERS there are several functions created for example sine, cosine, $\pi$,etc which can be reused for any other problem. 
+			
+			\item \textbf{Maintainability}\\
+			Software maintainability is important because it is approximately 75\% of the cost related to a project![9] 
+			In CHEERS, as the code has low complexity, high readablity and high understandablity it is easy to manipulate the code, solve erros, handle exceptions, make improvements, etc. Hence maintainablity is achieved. 
+		\end{itemize}
+
+%\newpage
+\section{Style Programming}
+
+		Programming style is a set of rules used for writing the source code for a computer program. It is often claimed that following a particular programming style will help programmers to read and understand source code conforming to the style, and help to avoid introducing errors.[4]\\
+		
+		\begin{itemize}
+			\item  \textbf{PEP8}: a style guide for Python that discusses topics such as how you should name variables, how you should use indentation in your code, how you should structure your importstatements, etc. Adhering to PEP8 makes it easier for other Python developers to read and understand your code, and to understand what their contributions should look like. The PEP8 application and Python library can check your code for compliance with PEP8.[6]\\
+			
+			\item \textbf{Numpydoc}: a standard for API documentation through docstrings used by NumPy, SciPy, and many other Python scientific computing pacakges. Adhering to numpydoc helps ensure that users and developers will know how to use your Python package, either for their own analyses or as a component of their own Python packages. If you use numpydoc, you can also use existing tools such as Sphinx to automatically generate HTML documentation for your API.[6]\\
+			
+			\item \textbf{Semantic Versioning}: a standard describing how to define versions of your software no matter what language it’s written in. Using Semantic Versioning makes it easy for other developers to understand what is guaranteed to stay the same and what might change across versions of your software.[6]\\
+			
+			\item \textbf{PEP8} has been followed in CHEERS and tool used is \textbf{autopep8}.
+		\end{itemize}
+
+\newpage
+%\textsc{\LARGE }\\[8.0 cm]
+\section{Experimental results}	
+
+		Below are the outputs(length of line segment $X_1X_2$) for different values of $R$ which are generated in Scratch method and inbuilt method respectively.\\
+		
+		\begin{table}[ht] 
+			\caption{Values of length(l)}
+			\centering 
+			\begin{tabular}{c c c c}
+				\hline
+				
+				Radius  & Scratch method & inbuilt method \\ [0.5ex] 	
+				
+				\hline
+				5  & 5.9602724670 & 5.9602724670 \\
+				10 & 11.920544934 & 11.920544934 \\
+				15 & 17.880817401 & 17.880817401 \\
+				20 & 23.841089868 &	23.841089868 \\
+				25 & 29.801362335 &	29.801362335 \\
+				30 & 35.761634802 & 35.761634802 \\
+				35 & 41.721907269 &	41.721907269 \\
+				40 & 47.682179736 &	47.682179736 \\
+				45 & 53.642452203 &	53.642452203 \\
+				50 & 59.602724670 & 59.602724670 \\
+				\hline 
+			\end{tabular}
+			\label{table:nonlin} 
+		\end{table}
+
+%\newpage
+\section{Debugger}
+	
+		A debugger or debugging tool is a computer program that is used to test and debug other programs[7]. In CHEERS the code has been debugged in command prompt.
+
+	\newpage
+	\subsection{Debugger for CHEERS}		
+		\begin{figure}[h!]
+			\includegraphics[width=\linewidth]{debugger1.PNG} %image path and dimension
+			\caption{Debugger of CHEERS \- 1}
+		\end{figure}	
+		\begin{figure}[h!]
+			\includegraphics[width=\linewidth]{debugger2.PNG} %image path and dimension
+			\caption{Debugger of CHEERS \- 2}
+		\end{figure}
+	
+\newpage	
+\section{Version Control}
+	
+		Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later. For the examples in this book you will use software source code as the files being version controlled, though in reality you can do this with nearly any type of file on a computer.[5]
+		
+		The version control for CHEERS can be found below,
+		
+		\begin{itemize}
+			\item 	https://github.com/meetmaniar/CoasterOverlapping
+		\end{itemize}
+		
+	
+	
+%\newpage
+\section{Exception handling}
+
+		Exception handling is the process of responding to the occurrence of exceptions during computation[12]. Exceptional conditions requiring special processing are often changing the normal flow of program execution. Some programming languages have inbuilt mechanism to handle execptions, while in others the developers has to think for exceptions and handle it in the code.\\
+	
+		In general, an exception breaks the normal flow of execution and executes a pre-registered exception handler. Exceptions are of two main types:
+		
+		\begin{itemize}
+			\item Hardware Exception
+			\item Software Exception
+		\end{itemize}
+	
+	\subsection{Exceptions in CHEERS}	
+		Below are the Screenshots for exception handling in CHEERS.  This makes it \textbf{Robust}.
+		
+		\newpage
+		\begin{itemize}
+			\item \textbf{Incarnation 1 - Scratch} 
+			
+			\begin{figure}[h!]
+				\includegraphics[width=\linewidth]{scratch_stringInput_exception.PNG} %image path and dimension
+				\caption{Error message for String as radius}
+			\end{figure}
+			
+			\begin{figure}[h!]
+				\includegraphics[width=\linewidth]{scratch_negativeInput_exception.PNG} %image path and dimension
+				\caption{Error message for negative radius}
+			\end{figure}
+		\end{itemize}
+		
+		\newpage
+		\begin{itemize}	
+			\item \textbf{Incarnation 2 - Inbuilt}
+			\begin{figure}[h!]
+				\includegraphics[width=\linewidth]{inbuilt_stringInput_exception.PNG} %image path and dimension
+				\caption{Error message for String as radius}
+			\end{figure}
+			
+			\begin{figure}[h!]
+				\includegraphics[width=\linewidth]{inbuilt_negativeInput_exception.PNG} %image path and dimension
+				\caption{Error message for negative radius}
+			\end{figure}
+		\end{itemize}
+	
+
+\newpage
+\section{Instruction for processing Source code}
+	
+	\begin{itemize}
+		\item Execute the following steps to run the code:\\\\
+			1)	Open cmd or command prompt (or terminal)\\
+			2)	Type ‘python modulename.py’,\\
+			modulename can be main, scratch, inbuilt or main-inbuilt.\\
+			$$OR\\$$
+			Just double click on the modulename.py that needs to be executed, modulename can be main, scratch, inbuilt or main-inbuilt.
+	
+		\item To generate the PyDoc: \\\\
+			1)	Open cmd or command prompt (or terminal)\\
+			2)	Type ‘python –m pydoc modulename.py’,\\
+			Modulename can be main, scratch, inbuilt or main-inbuilt\\
+	\end{itemize}
+
+
+\section{Software Tools Used}
+		
+		\begin{itemize}
+			\item Eclipse with the Pydev plug-in
+			\item CRC maker
+			\item Miktex
+			\item Texstdio
+			\item Notepad++
+			\item Github
+			\item Autopep8
+		\end{itemize}
+
+\section{Team Contribution}
+
+	\begin{center}
+		\begin{tabular}{ | l  | p{8cm} |}
+			\hline
+			Team Member & Contributions  \\
+			\hline
+			[OK] Vivek Jariya & 
+			\begin{itemize}
+				\item Participated in brainstorming sessions.
+				\item Participated in the review meetings.
+				\item Participated in creating CRC Cards.
+				\item Participated in Coding.
+				\item Participated in Documentation in Latex.
+			\end{itemize}\\ \hline
+			[OK] Meet Maniar & 
+			\begin{itemize}
+				\item Participated in brainstorming sessions.
+				\item Participated in the review meetings.
+				\item Participated in creating CRC Cards.
+				\item Participated in Coding.
+				\item Participated in Documentation in Latex.
+			\end{itemize}\\ \hline
+		\end{tabular}
+	\end{center}	
+
+\section{Glossary}
+
+	\begin{itemize}
+		\item \textbf{CHEERS} - This Project
+		\item \textbf{CRC} - Class Responsibility Collaboration
+		\item \textbf{PEP8} - Python Enhancement Proposal 8
+		\item \textbf{XML} - Extensible Markup Language 
+		\item \textbf{DRY} - Don't Repeat Yourself
+		\item \textbf{OCP} - Open Close Principle	
+		\item \textbf{DIP} - Dependency Inversion Principle
+		\item \textbf{SRP} - Single Responsiblity Principle
+		\item \textbf{BRP} - Balanced Responsiblity Principle	
+	\end{itemize}
+
+\section{References}
+	
+		$[1]$ https://en.wikipedia.org/wiki/Beverage\_coaster \\
+		$[2]$ http://agilemodeling.com/artifacts/crcModel.htm \\
+		$[3]$ http://www.softpanorama.org/SE/programming\_style.shtml \\
+		$[4]$ http://www.softpanorama.org/SE/programming\_style.shtml \\
+		$[5]$ https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control \\
+		$[6]$ https://alistairwalsh.github.io/python-novice-gapminder/20-style/ \\
+		$[7]$ https://en.wikipedia.org/wiki/Debugger\\
+		$[8]$ http://www.informit.com/articles/article.aspx?p=2223710\\
+		$[9]$ http://www.castsoftware.com/glossary/software-maintainability\\
+		$[10]$ https://users.encs.concordia.ca/~kamthan/courses/soen-6441/project\_description.pdf\\
+		$[11]$ https://thebojan.ninja/2015/04/08/high-cohesion-loose-coupling/
+		$[12]$ https://en.wikipedia.org/wiki/Exception\_handling
 \end{document}
